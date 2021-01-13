@@ -1,0 +1,16 @@
+<h>hi just enter a video url and hit confirm and ez</h>
+<br>
+<input type="url" id="urlInput" placeholder='url must end with ".mp4" ".mov" etc' size="100">
+<button id="btn" onClick="Yeet()">Confirm</button>
+<br><br>
+<video id="vidCtr" controls=true width="1000" style="visibility: hidden"></video>
+
+<script>
+function Yeet() {
+    document.getElementById("btn").innerHTML = "enjoy the show";
+    
+    var vidCtr = document.getElementById("vidCtr")
+    vidCtr.setAttribute("src", document.getElementById("urlInput").value);
+    vidCtr.setAttribute("style", "")
+}
+</script>
