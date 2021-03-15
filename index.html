@@ -6,11 +6,17 @@
 <video id="vidCtr" controls=true width="1000" style="visibility: hidden"></video>
 
 <script>
-function Yeet() {
-    document.getElementById("btn").innerHTML = "enjoy the show";
+    var vidCtr = document.getElementById("vidCtr");
     
-    var vidCtr = document.getElementById("vidCtr")
-    vidCtr.setAttribute("src", document.getElementById("urlInput").value);
-    vidCtr.setAttribute("style", "")
-}
+    const urlParams = new URLSearchParams(queryString);
+    if(urlParams.has("url")) {
+        document.getElementById("urlInput").value = urlParams.get("url");
+        Yeet();
+    }
+    
+    function Yeet() {
+        document.getElementById("btn").innerHTML = "enjoy the show";
+        vidCtr.setAttribute("src", document.getElementById("urlInput").value);
+        vidCtr.setAttribute("style", "");
+    }
 </script>
