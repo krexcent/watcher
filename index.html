@@ -9,9 +9,11 @@
     var vidCtr = document.getElementById("vidCtr");
     
     const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams.has("url"));
     if(urlParams.has("url")) {
         document.getElementById("urlInput").value = urlParams.get("url");
         Yeet();
+        console.log("WOOOO");
     }
     
     function Yeet() {
