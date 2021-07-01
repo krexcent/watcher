@@ -1,23 +1,24 @@
 <h>hi just enter a video url and hit confirm and ez</h>
 <br>
 <input type="url" id="urlInput" placeholder='url must end with ".mp4" ".mov" etc' size="100">
-<button id="btn" onClick="Yeet()">Confirm</button>
+<button id="btn" onClick="showVideo()">Confirm</button>
 <br><br>
 <video id="vidCtr" controls=true width="1000" style="visibility: hidden"></video>
 
 <script>
     var vidCtr = document.getElementById("vidCtr");
     
+    // Checking URL for a video link that may already be provided
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     console.log(urlParams.has("url"));
     if(urlParams.has("url")) {
         document.getElementById("urlInput").value = urlParams.get("url");
-        Yeet();
+        showVideo();
         console.log("WOOOO");
     }
     
-    function Yeet() {
+    function showVideo() {
         document.getElementById("btn").innerHTML = "enjoy the show";
         vidCtr.setAttribute("src", document.getElementById("urlInput").value);
         vidCtr.setAttribute("style", "");
